@@ -10,7 +10,6 @@
             --red: #b30000;
             --white: #ffffff;
             --black: #050505;
-            --gray: #1a1a1a;
         }
 
         body {
@@ -27,7 +26,6 @@
             overflow-x: hidden;
         }
 
-        /* Header Animation */
         header {
             text-align: center;
             margin-bottom: 2rem;
@@ -39,12 +37,10 @@
             letter-spacing: 4px;
             margin: 0;
             text-transform: uppercase;
-            color: var(--white);
             text-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000;
             animation: glow 2s infinite alternate;
         }
 
-        /* Glassmorphism Card */
         .container {
             background: rgba(255, 255, 255, 0.05);
             backdrop-filter: blur(10px);
@@ -52,8 +48,8 @@
             border-radius: 20px;
             border: 1px solid rgba(255, 255, 255, 0.1);
             text-align: center;
-            width: 80%;
-            max-width: 400px;
+            width: 85%;
+            max-width: 450px;
             box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.8);
             animation: fadeInUp 1s ease-out;
         }
@@ -67,25 +63,31 @@
         }
 
         .btn {
-            padding: 15px;
+            padding: 15px 25px;
             color: var(--white);
             text-decoration: none;
             border: 1px solid var(--red);
             border-radius: 50px;
             transition: all 0.4s ease;
-            position: relative;
-            overflow: hidden;
             background: transparent;
+            font-size: 1rem;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
         }
 
         .btn:hover {
             background: var(--red);
             box-shadow: 0 0 20px var(--red);
             transform: translateY(-3px);
-            letter-spacing: 2px;
+            letter-spacing: 1px;
         }
 
-        /* Keyframe Animations */
+        .native {
+            opacity: 0.7;
+            font-size: 0.9rem;
+        }
+
         @keyframes glow {
             from { text-shadow: 0 0 5px #ff0000, 0 0 10px #ff0000; }
             to { text-shadow: 0 0 20px #ff0000, 0 0 30px #ff0000; }
@@ -112,11 +114,11 @@
         <h2>Welcome to the pack!</h2>
 
         <div class="link-container">
-            <a href="https://wembiii.github.io/THEWOLFTEAM-EN/" class="btn">English</a>
-            <a href="https://wembiii.github.io/THEWOLFTEAM-PL/" class="btn">Polish</a>
-            <a href="https://wembiii.github.io/THEWOLFTEAM-BG/" class="btn">Bulgarian</a>
-            <a href="https://wembiii.github.io/THEWOLFTEAM-AR/" class="btn">Arabic</a>
-            <a href="https://wembiii.github.io/THEWOLFTEAM-TR/" class="btn">Turkish</a>
+            <a href="https://wembiii.github.io/THEWOLFTEAM-EN/" class="btn">English <span class="native"></span></a>
+            <a href="https://wembiii.github.io/THEWOLFTEAM-PL/" class="btn">Polish <span class="native">Polski</span></a>
+            <a href="https://wembiii.github.io/THEWOLFTEAM-BG/" class="btn">Bulgarian <span class="native">Български</span></a>
+            <a href="https://wembiii.github.io/THEWOLFTEAM-AR/" class="btn">Arabic <span class="native">العربية</span></a>
+            <a href="https://wembiii.github.io/THEWOLFTEAM-TR/" class="btn">Turkish <span class="native">Türkçe</span></a>
         </div>
     </div>
 
