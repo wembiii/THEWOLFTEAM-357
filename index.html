@@ -4,53 +4,62 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>THE WOLF TEAM</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        /* General Reset & Body */
+        :root {
+            --red: #b30000;
+            --white: #ffffff;
+            --black: #050505;
+            --gray: #1a1a1a;
+        }
+
         body {
             margin: 0;
             padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #121212; /* Dark Gray/Black */
-            color: #ffffff;
+            font-family: 'Orbitron', sans-serif;
+            background: radial-gradient(circle at center, #222, var(--black));
+            color: var(--white);
             display: flex;
             flex-direction: column;
             align-items: center;
+            justify-content: center;
             min-height: 100vh;
+            overflow-x: hidden;
         }
 
-        /* Ribbon / Header */
+        /* Header Animation */
         header {
-            width: 100%;
-            background-color: #b30000; /* Deep Red */
-            padding: 20px 0;
             text-align: center;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
-            margin-bottom: 50px;
+            margin-bottom: 2rem;
+            animation: fadeInDown 1s ease-out;
         }
 
-        header h1 {
+        h1 {
+            font-size: 3rem;
+            letter-spacing: 4px;
             margin: 0;
-            font-size: 2.5rem;
-            letter-spacing: 2px;
-            color: #ffffff;
-            /* Glowing Effect */
-            text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #ff0000;
+            text-transform: uppercase;
+            color: var(--white);
+            text-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000;
+            animation: glow 2s infinite alternate;
         }
 
-        /* Body Content */
-        main {
+        /* Glassmorphism Card */
+        .container {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            padding: 40px;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
             text-align: center;
-            width: 90%;
-            max-width: 600px;
+            width: 80%;
+            max-width: 400px;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.8);
+            animation: fadeInUp 1s ease-out;
         }
 
-        h2 {
-            font-size: 1.8rem;
-            margin-bottom: 40px;
-            color: #e0e0e0;
-        }
+        h2 { margin-bottom: 30px; font-weight: 400; letter-spacing: 1px; }
 
-        /* Links/Buttons */
         .link-container {
             display: flex;
             flex-direction: column;
@@ -58,21 +67,38 @@
         }
 
         .btn {
-            display: block;
             padding: 15px;
-            background-color: #1a1a1a;
-            color: white;
+            color: var(--white);
             text-decoration: none;
-            border: 2px solid #b30000; /* Red Border */
-            border-radius: 5px;
-            font-weight: bold;
-            transition: all 0.3s ease;
+            border: 1px solid var(--red);
+            border-radius: 50px;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            background: transparent;
         }
 
         .btn:hover {
-            background-color: #b30000; /* Red Fill on Hover */
-            color: white;
-            transform: scale(1.02);
+            background: var(--red);
+            box-shadow: 0 0 20px var(--red);
+            transform: translateY(-3px);
+            letter-spacing: 2px;
+        }
+
+        /* Keyframe Animations */
+        @keyframes glow {
+            from { text-shadow: 0 0 5px #ff0000, 0 0 10px #ff0000; }
+            to { text-shadow: 0 0 20px #ff0000, 0 0 30px #ff0000; }
+        }
+
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(50px); }
+            to { opacity: 1; transform: translateY(0); }
         }
     </style>
 </head>
@@ -82,7 +108,7 @@
         <h1>THE WOLF TEAM</h1>
     </header>
 
-    <main>
+    <div class="container">
         <h2>Welcome to the pack!</h2>
 
         <div class="link-container">
@@ -92,7 +118,7 @@
             <a href="https://wembiii.github.io/THEWOLFTEAM-AR/" class="btn">Arabic</a>
             <a href="https://wembiii.github.io/THEWOLFTEAM-TR/" class="btn">Turkish</a>
         </div>
-    </main>
+    </div>
 
 </body>
 </html>
